@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leleka — Privacy policy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <img src="leleka.png" alt="Leleka icon">
+    <div>
+      <h1>Privacy policy</h1>
+      <div class="muted">Leleka for Android (app.leleka.chat) · Effective October 12, 2026</div>
+    </div>
+  </header>
+  <p class="langs"><a href="privacy-uk.html">Українською</a> <a href="privacy-ru.html">На русском</a> <a href="index.html">Home</a></p>
+
+  <div class="card">
+    <p><strong>In short:</strong> Leleka is a client. It talks to the XMPP server you choose, and — only if you set one up —
+      to a push gateway through Google Firebase Cloud Messaging. The developer of Leleka does not run any server that receives
+      your data, and the app contains no analytics, no advertising and no tracking.</p>
+  </div>
+
+  <h2>Who is responsible</h2>
+  <p>Leleka is developed by fejdraus as an open-source fork of Conversations (GNU GPL v3).
+    Contact: <a href="https://github.com/fejdraus/leleka-site/issues">github.com/fejdraus/leleka-site/issues</a>.</p>
+  <p>Your XMPP server and, if you use one, your push gateway are run by their operators (you, your organisation or your
+    provider). How they handle data is governed by their own policies.</p>
+
+  <h2>Data the app processes and where it goes</h2>
+  <table>
+    <tr><th>Data</th><th>Purpose and recipient</th></tr>
+    <tr><td>XMPP address and password</td>
+      <td>Stored on your device and sent only to your XMPP server to sign in. The connection is always encrypted (TLS), and
+        the password is sent only after the server certificate has been verified.</td></tr>
+    <tr><td>Messages, files, contact list, profile, presence</td>
+      <td>Exchanged with your XMPP server and the servers of the people you talk to, as XMPP requires. Messages can be
+        end-to-end encrypted with OMEMO. Stored on your device and on the servers according to their settings.</td></tr>
+    <tr><td>Audio and video calls</td>
+      <td>Sent directly between the devices, or through STUN/TURN servers provided by your XMPP server. Calls are encrypted
+        (DTLS-SRTP).</td></tr>
+    <tr><td>Push notifications (optional, per account)</td>
+      <td>Only if you enter a push gateway for an account. The app then gets a Firebase Cloud Messaging token from Google Play
+        services for the Firebase project you entered, and sends it together with an app-specific device identifier (Android ID)
+        to your XMPP server, which passes it to the push gateway. The gateway wakes the app up through Google Firebase Cloud
+        Messaging. These wake-up messages do not contain message content. Google processes them under the
+        <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. Without a push gateway the app keeps a
+        permanent connection to your server instead.</td></tr>
+    <tr><td>Location</td>
+      <td>Only when you choose to share or view a location. The location is sent as a message to the chosen contact. Map
+        images are loaded from OpenStreetMap servers, which see your IP address
+        (<a href="https://osmfoundation.org/wiki/Privacy_Policy">OSMF Privacy Policy</a>).</td></tr>
+    <tr><td>Install referrer</td>
+      <td>When the app is installed from an invitation link, the Google Play install referrer is read on the device to finish the
+        invitation. It is not sent to the developer.</td></tr>
+  </table>
+
+  <h2>What the app does not do</h2>
+  <ul>
+    <li>No analytics, advertising, tracking or profiling.</li>
+    <li>No crash reports or usage statistics are sent to the developer.</li>
+    <li>The address book of the phone is not read or uploaded.</li>
+    <li>No data is sold or shared with third parties by the developer.</li>
+  </ul>
+
+  <h2>Permissions</h2>
+  <table>
+    <tr><th>Permission</th><th>Why</th></tr>
+    <tr><td>Internet, network state</td><td>Connect to your XMPP server and push gateway.</td></tr>
+    <tr><td>Local network</td><td>Connect to an XMPP server on your local network.</td></tr>
+    <tr><td>Notifications, vibration</td><td>Show messages and incoming calls.</td></tr>
+    <tr><td>Full-screen notifications, managing own calls</td><td>Show incoming calls on the lock screen and integrate with the phone's call system.</td></tr>
+    <tr><td>Microphone, camera, audio settings, Bluetooth</td><td>Audio and video calls, voice messages, taking photos; using a headset.</td></tr>
+    <tr><td>Location</td><td>Only when you share your location.</td></tr>
+    <tr><td>Storage</td><td>Sending and saving attachments on older Android versions.</td></tr>
+    <tr><td>Foreground service, wake lock, start at boot</td><td>Keep the connection while needed, handle a push or a call without the device falling asleep, reconnect after a restart.</td></tr>
+    <tr><td>Ignore battery optimization (asked only when needed)</td><td>Only for accounts without push, or one used as UnifiedPush distributor, which need a permanent connection.</td></tr>
+    <tr><td>Install packages</td><td>Open an APK file you received as an attachment, if you choose to.</td></tr>
+    <tr><td>Display over other apps</td><td>Open the call screen over other apps when a call comes in.</td></tr>
+    <tr><td>Launcher badges</td><td>Show the number of unread messages on the app icon.</td></tr>
+  </table>
+
+  <h2>Keeping and deleting data</h2>
+  <p>Data is kept on your device until you delete it. Removing an account in the app deletes its data from the device.
+    To delete the account itself and the messages stored on the server, use the account deletion function of your XMPP
+    server or contact its operator. Removing the push gateway from an account stops push notifications for it; the gateway
+    may keep the token until it expires.</p>
+
+  <h2>Children</h2>
+  <p>Leleka is not directed at children under 13.</p>
+
+  <h2>Changes</h2>
+  <p>Changes to this policy are published on this page with a new effective date.</p>
+</main>
+</body>
+</html>
